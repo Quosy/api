@@ -20,7 +20,8 @@ php bin/console doctrine:schema:update --force
 - [x] Manage members
 - [x] Manage activities
 
-Todo :
+# Todo
+
 - [ ] Add Test
 - [ ] Add Login & register
 - [ ] Add Jwt
