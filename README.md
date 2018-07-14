@@ -1,9 +1,9 @@
 # Quosy API
 
-This projet as been creanoted using [API Platform Framework](https://api-platform.com)
+![apiplatform](https://api-platform.com/logo.png)
 
-![apiplatform](https://dunglas.fr/slides/forum-php-2015/img/api-platform-logo-500x500.png)
 
+This projet as been created using [API Platform Framework](https://api-platform.com) `2.3` with `Symfony 4.1.1`
 # Install 
 
 ```
@@ -14,9 +14,14 @@ php bin/console doctrine:schema:update --force
 
 ```
 
+# Features
+
+- [x] Graphql
+- [x] Manage members
+- [x] Manage activities
+
 Todo :
-- Add Test
-- Add login/register
-- Add JWT
-- Add filters
-- Enable Graphql
+- [ ] Add Test
+- [ ] Add Login & register
+- [ ] Add Jwt
+- [ ] Add Filters
