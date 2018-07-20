@@ -37,3 +37,4 @@ services:
     'App\Serializer\UserNormalizer':
             arguments:
                 $decorated: '@api_platform.serializer.normalizer.item'
+                

@@ -21,12 +21,14 @@ public function normalize($object, $format = null, array $context = [])
     $docs['info']['title'] = 'Quosy api';
     $docs['info']['version'] = '1.0.1';
     $docs['basePath'] = 'http://localhost:8000/api';
+    $docs['info']['description'] = 'This is open API made with <3 by [Jenaye](https:\/\/twitter.com/Jenaye_fr)';
 
     $usernameDefinition = [
     'name' => 'username',
     'definition' => 'you\'re username',
     'default' => 'string',
     ];
+
     $passwordDefinition2 = [
         'name' => 'password',
         'definition' => 'you\'re password',
