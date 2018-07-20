@@ -2,11 +2,7 @@
 
 declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: Houziaux mike : jenaye
- * Email : mike@les-tilleuls.coop
- * Date: 12/07/18
- * Time: 20:16.
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
  */
 
 namespace App\Repository;

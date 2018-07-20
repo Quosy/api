@@ -2,11 +2,7 @@
 
 declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: Houziaux mike : jenaye
- * Email : mike@les-tilleuls.coop
- * Date: 12/07/18
- * Time: 20:40.
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
  */
 
 namespace App\Entity;
@@ -16,8 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Type.
- *
  * @ApiResource
  * @ORM\Table(name="type")
  * @ORM\Entity(repositoryClass="App\Repository\TypeRepository")
@@ -72,8 +66,6 @@ class Type
     }
 
     /**
-     * Get id.
-     *
      * @return int
      */
     public function getId()
@@ -82,8 +74,6 @@ class Type
     }
 
     /**
-     * Set name.
-     *
      * @param string $name
      *
      * @return Type
@@ -96,8 +86,6 @@ class Type
     }
 
     /**
-     * Get name.
-     *
      * @return string
      */
     public function getName()
@@ -106,8 +94,6 @@ class Type
     }
 
     /**
-     * Set price.
-     *
      * @param string $price
      *
      * @return Type
@@ -120,8 +106,6 @@ class Type
     }
 
     /**
-     * Get price.
-     *
      * @return string
      */
     public function getPrice()

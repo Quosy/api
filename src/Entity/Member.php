@@ -2,11 +2,7 @@
 
 declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: Houziaux mike : jenaye
- * Email : mike@les-tilleuls.coop
- * Date: 12/07/18
- * Time: 20:14.
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
  */
 
 namespace App\Entity;
@@ -16,8 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Membre.
- *
  * @ApiResource(attributes={"normalization_context"={"groups"={"Member"}},"filters"={"offer.search", "offer.bool"}})
  * @ORM\Table(name="member")
  * @ORM\Entity(repositoryClass="App\Repository\MemberRepository")
@@ -134,8 +128,6 @@ class Member
     }
 
     /**
-     * Get id.
-     *
      * @return int
      */
     public function getId()
@@ -144,8 +136,6 @@ class Member
     }
 
     /**
-     * Set nom.
-     *
      * @param string $nom
      *
      * @return Member
@@ -158,8 +148,6 @@ class Member
     }
 
     /**
-     * Get nom.
-     *
      * @return string
      */
     public function getNom()
@@ -168,8 +156,6 @@ class Member
     }
 
     /**
-     * Set prenom.
-     *
      * @param string $prenom
      *
      * @return string
@@ -180,8 +166,6 @@ class Member
     }
 
     /**
-     * Get prenom.
-     *
      * @return string
      */
     public function getPrenom()
@@ -190,8 +174,6 @@ class Member
     }
 
     /**
-     * Set email.
-     *
      * @param string $email
      *
      * @return string
@@ -202,8 +184,6 @@ class Member
     }
 
     /**
-     * Get email.
-     *
      * @return string
      */
     public function getEmail()
@@ -212,8 +192,6 @@ class Member
     }
 
     /**
-     * Set cheque.
-     *
      * @param bool $cheque
      *
      * @return bool
@@ -224,8 +202,6 @@ class Member
     }
 
     /**
-     * Get cheque.
-     *
      * @return bool
      */
     public function getCheque()
@@ -234,8 +210,6 @@ class Member
     }
 
     /**
-     * Set certificat.
-     *
      * @param string $certificat
      *
      * @return string
@@ -246,8 +220,6 @@ class Member
     }
 
     /**
-     * Get certificat.
-     *
      * @return string
      */
     public function getCertificat()
@@ -256,8 +228,6 @@ class Member
     }
 
     /**
-     * Set cotisation.
-     *
      * @param string $cotisation
      *
      * @return string
@@ -268,8 +238,6 @@ class Member
     }
 
     /**
-     * Get cotisation.
-     *
      * @return string
      */
     public function getCotisation()
@@ -293,17 +261,12 @@ class Member
         $this->phone = $phone;
     }
 
-    /**
-     * Constructor.
-     */
     public function __construct()
     {
         $this->activites = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add activite.
-     *
      * @param Activity $activite
      *
      * @return \App\Entity\Activity
@@ -314,8 +277,6 @@ class Member
     }
 
     /**
-     * Remove activite.
-     *
      * @param Activity $activite
      */
     public function removeActivite(Activity $activite)

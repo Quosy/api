@@ -1,11 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Houziaux mike : jenaye
- * Email : mike@les-tilleuls.coop
- * Date: 20/07/18
- * Time: 11:50.
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
  */
 
 declare(strict_types=1);
