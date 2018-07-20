@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop.
  */
 
 declare(strict_types=1);

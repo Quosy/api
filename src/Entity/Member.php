@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop.
  */
 
 namespace App\Entity;
@@ -181,6 +181,7 @@ class Member
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 

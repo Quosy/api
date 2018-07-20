@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * User: Houziaux mike : jenaye : mike@les-tilleuls.coop
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop.
  */
 
 namespace App\Repository;
