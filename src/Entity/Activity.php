@@ -1,28 +1,29 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: Houziaux mike : jenaye
  * Email : mike@les-tilleuls.coop
  * Date: 12/07/18
- * Time: 20:21
+ * Time: 20:21.
  */
 
 namespace App\Entity;
 
-use App\Entity\Member;
-use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Activity
+ * Activity.
+ *
  * @ApiResource(attributes={"normalization_context"={"groups"={"Activity"}}})
  * @ORM\Table(name="activity")
  * @ORM\Entity(repositoryClass="App\Repository\ActivityRepository")
  */
 class Activity
 {
-
     /**
      * @var int
      * @Groups({"Activity", "Member"})
@@ -68,10 +69,8 @@ class Activity
         $this->type = $type;
     }
 
-
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -81,7 +80,7 @@ class Activity
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -95,7 +94,7 @@ class Activity
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -104,11 +103,8 @@ class Activity
         return $this->name;
     }
 
-
-
-
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -116,12 +112,13 @@ class Activity
     }
 
     /**
-     * Add membre
+     * Add membre.
      *
      * @param Member $member
-     * @return Activity
-     * @internal param Membre $membre
      *
+     * @return Activity
+     *
+     * @internal param Membre $membre
      */
     public function addMembre(Member $member)
     {
@@ -131,9 +128,10 @@ class Activity
     }
 
     /**
-     * Remove membre
+     * Remove membre.
      *
      * @param Member $member
+     *
      * @internal param Membre $membre
      */
     public function removeMembre(Member $member)
@@ -142,7 +140,7 @@ class Activity
     }
 
     /**
-     * Get membres
+     * Get membres.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -150,5 +148,4 @@ class Activity
     {
         return $this->members;
     }
-
 }

@@ -5,7 +5,7 @@
  * User: Houziaux mike : jenaye
  * Email : mike@les-tilleuls.coop
  * Date: 20/07/18
- * Time: 11:50
+ * Time: 11:50.
  */
 
 declare(strict_types=1);

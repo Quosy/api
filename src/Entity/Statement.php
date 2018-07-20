@@ -1,9 +1,11 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: jenaye
  * Date: 14/07/2018
- * Time: 19:05
+ * Time: 19:05.
  */
 
 namespace App\Entity;
@@ -12,13 +14,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Statement
+ * Statement.
+ *
  * @ApiResource
  * @ORM\Table(name="statement")
  * @ORM\Entity(repositoryClass="App\Repository\StatementRepository")
  */
-class Statement {
-
+class Statement
+{
     /**
      * @var int
      *
@@ -28,7 +31,6 @@ class Statement {
      */
     private $id;
 
-
     /**
      * @var \DateTime
      *
@@ -36,14 +38,12 @@ class Statement {
      */
     private $date;
 
-
     /**
      * @var string
      *
      * @ORM\Column(name="designation", type="string", length=60)
      */
     private $designation;
-
 
     /**
      * @var int
@@ -58,7 +58,6 @@ class Statement {
      * @ORM\Column(name="outflow", type="integer", nullable=true)
      */
     private $outflow;
-
 
     /**
      * @return int
@@ -140,12 +139,8 @@ class Statement {
         $this->outflow = $outflow;
     }
 
-
-    public function __toString() {
+    public function __toString()
+    {
         return $this->designation;
     }
-
-
-
-
 }

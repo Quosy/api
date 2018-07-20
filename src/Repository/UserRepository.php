@@ -1,15 +1,17 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: jenaye
  * Date: 19/07/2018
- * Time: 21:12
+ * Time: 21:12.
  */
 
 namespace App\Repository;
 
-use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
 
 class UserRepository extends EntityRepository implements UserLoaderInterface
 {

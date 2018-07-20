@@ -1,21 +1,23 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: Houziaux mike : jenaye
  * Email : mike@les-tilleuls.coop
  * Date: 12/07/18
- * Time: 20:14
+ * Time: 20:14.
  */
 
 namespace App\Entity;
 
-use App\Entity\Activity;
-use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Membre
+ * Membre.
+ *
  * @ApiResource(attributes={"normalization_context"={"groups"={"Member"}},"filters"={"offer.search", "offer.bool"}})
  * @ORM\Table(name="member")
  * @ORM\Entity(repositoryClass="App\Repository\MemberRepository")
@@ -93,7 +95,7 @@ class Member
     private $activites;
 
     /**
-     * @var integer
+     * @var int
      * @ORM\Column(type="integer", length=6)
      * @Groups({"Member"})
      */
@@ -131,9 +133,8 @@ class Member
         $this->activites = $activites;
     }
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -143,7 +144,7 @@ class Member
     }
 
     /**
-     * Set nom
+     * Set nom.
      *
      * @param string $nom
      *
@@ -157,7 +158,7 @@ class Member
     }
 
     /**
-     * Get nom
+     * Get nom.
      *
      * @return string
      */
@@ -167,7 +168,7 @@ class Member
     }
 
     /**
-     * Set prenom
+     * Set prenom.
      *
      * @param string $prenom
      *
@@ -176,11 +177,10 @@ class Member
     public function setPrenom($prenom)
     {
         return $this->prenom = $prenom;
-
     }
 
     /**
-     * Get prenom
+     * Get prenom.
      *
      * @return string
      */
@@ -190,7 +190,7 @@ class Member
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
@@ -198,11 +198,11 @@ class Member
      */
     public function setEmail($email)
     {
-       return $this->email = $email;
+        return $this->email = $email;
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -212,9 +212,9 @@ class Member
     }
 
     /**
-     * Set cheque
+     * Set cheque.
      *
-     * @param boolean $cheque
+     * @param bool $cheque
      *
      * @return bool
      */
@@ -224,7 +224,7 @@ class Member
     }
 
     /**
-     * Get cheque
+     * Get cheque.
      *
      * @return bool
      */
@@ -234,7 +234,7 @@ class Member
     }
 
     /**
-     * Set certificat
+     * Set certificat.
      *
      * @param string $certificat
      *
@@ -246,7 +246,7 @@ class Member
     }
 
     /**
-     * Get certificat
+     * Get certificat.
      *
      * @return string
      */
@@ -256,7 +256,7 @@ class Member
     }
 
     /**
-     * Set cotisation
+     * Set cotisation.
      *
      * @param string $cotisation
      *
@@ -268,14 +268,13 @@ class Member
     }
 
     /**
-     * Get cotisation
+     * Get cotisation.
      *
      * @return string
      */
     public function getCotisation()
     {
         return $this->cotisation;
-
     }
 
     /**
@@ -293,8 +292,9 @@ class Member
     {
         $this->phone = $phone;
     }
+
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -302,7 +302,7 @@ class Member
     }
 
     /**
-     * Add activite
+     * Add activite.
      *
      * @param Activity $activite
      *
@@ -314,7 +314,7 @@ class Member
     }
 
     /**
-     * Remove activite
+     * Remove activite.
      *
      * @param Activity $activite
      */
@@ -338,5 +338,4 @@ class Member
     {
         $this->enabled = $enabled;
     }
-
 }

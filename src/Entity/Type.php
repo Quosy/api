@@ -1,19 +1,23 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: Houziaux mike : jenaye
  * Email : mike@les-tilleuls.coop
  * Date: 12/07/18
- * Time: 20:40
+ * Time: 20:40.
  */
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+
 /**
- * Type
+ * Type.
+ *
  * @ApiResource
  * @ORM\Table(name="type")
  * @ORM\Entity(repositoryClass="App\Repository\TypeRepository")
@@ -46,9 +50,6 @@ class Type
      */
     private $price;
 
-
-
-
     /**
      * @ORM\OneToMany(targetEntity="Activity", mappedBy="type")
      */
@@ -70,10 +71,8 @@ class Type
         $this->acti = $acti;
     }
 
-
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -83,7 +82,7 @@ class Type
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -97,7 +96,7 @@ class Type
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -107,7 +106,7 @@ class Type
     }
 
     /**
-     * Set price
+     * Set price.
      *
      * @param string $price
      *
@@ -121,7 +120,7 @@ class Type
     }
 
     /**
-     * Get price
+     * Get price.
      *
      * @return string
      */
@@ -130,4 +129,3 @@ class Type
         return $this->price;
     }
 }
-

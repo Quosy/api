@@ -1,54 +1,51 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: Houziaux mike : jenaye
  * Email : mike@les-tilleuls.coop
  * Date: 19/07/18
- * Time: 21:00
+ * Time: 21:00.
  */
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
-* @ApiResource(attributes={"normalization_context"={"groups"={"User"}}})
-* @ORM\Table(name="app_users")
-* @ORM\Entity(repositoryClass="App\Repository\UserRepository")
-*/
+ * @ApiResource(attributes={"normalization_context"={"groups"={"User"}}})
+ * @ORM\Table(name="app_users")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ */
 class User implements UserInterface, \Serializable
 {
-
     /**
-    * @ORM\Column(type="integer")
-    * @ORM\Id
-    * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @Groups({"User"})
-    */
+     */
     private $id;
 
     /**
-    * @ORM\Column(type="string", length=25, unique=true)
-    * @Groups({"User"})
-    */
+     * @ORM\Column(type="string", length=25, unique=true)
+     * @Groups({"User"})
+     */
     private $username;
 
-
-
     /**
-    * @ORM\Column(type="string", length=64)
-    */
+     * @ORM\Column(type="string", length=64)
+     */
     private $password;
 
-
-
     /**
-    * @ORM\Column(name="is_active", type="boolean")
-    * @Groups({"User"})
-    */
+     * @ORM\Column(name="is_active", type="boolean")
+     * @Groups({"User"})
+     */
     private $isActive;
 
     public function setPassword($password)
@@ -93,25 +90,23 @@ class User implements UserInterface, \Serializable
         $this->isActive = $isActive;
     }
 
-
     public function getUsername()
     {
-    return $this->username;
+        return $this->username;
     }
 
     public function getSalt()
     {
-    return null;
     }
 
     public function getPassword()
     {
-    return $this->password;
+        return $this->password;
     }
 
     public function getRoles()
     {
-    return array('ROLE_USER');
+        return ['ROLE_USER'];
     }
 
     public function eraseCredentials()
@@ -121,17 +116,17 @@ class User implements UserInterface, \Serializable
     /** @see \Serializable::serialize() */
     public function serialize()
     {
-        return serialize(array(
-        $this->id,
-        $this->username,
-        $this->password,
-    ));
+        return serialize([
+            $this->id,
+            $this->username,
+            $this->password,
+        ]);
     }
 
-/** @see \Serializable::unserialize() */
-    public function unserialize($serialized) {
-
-    list (
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list(
         $this->id,
         $this->username,
         $this->password
