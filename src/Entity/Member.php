@@ -180,7 +180,8 @@ class Member
      */
     public function setEmail($email)
     {
-        return $this->email = $email;
+        $this->email = $email;
+        return $this;
     }
 
     /**
