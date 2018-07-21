@@ -29,3 +29,14 @@ Feature: Users feature
     }
     """
     Then the response status code should be 200
+
+
+  Scenario: Get informations of user
+    When I send a "GET" request to "/api/users/1"
+    Then the response status code should be 200
+
+
+  Scenario: delete user jenaye
+    When I add "Content-Type" header equal to "application/json"
+    And I send a "DELETE" request to "/api/users/1"
+    Then the response status code should be 200
