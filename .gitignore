@@ -15,3 +15,7 @@
 ###> lexik/jwt-authentication-bundle ###
 /var/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+
+###> behat/symfony2-extension ###
+behat.yml
+###< behat/symfony2-extension ###

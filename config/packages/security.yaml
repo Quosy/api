@@ -37,7 +37,7 @@ security:
 
     access_control:
           - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-          - { path: ^/api/users, role: IS_AUTHENTICATED_FULLY }
+          - { path: ^/api/users, role: IS_AUTHENTICATED_ANONYMOUSLY }
           - { path: ^/api/activities, role: IS_AUTHENTICATED_FULLY }
           - { path: ^/api/members, role: IS_AUTHENTICATED_FULLY }
           - { path: ^/api/statements, role: IS_AUTHENTICATED_FULLY }
