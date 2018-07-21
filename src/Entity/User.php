@@ -34,9 +34,23 @@ class User implements UserInterface, \Serializable
     private $username;
 
     /**
+     * @ORM\Column(type="string", length=60, unique=true)
+     * @Groups({"User"})
+     */
+    private $email;
+
+    /**
      * @ORM\Column(type="string", length=64)
      */
     private $password;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="lastLogin", type="datetime")
+     */
+    private $lastLogin;
+
 
     /**
      * @ORM\Column(name="is_active", type="boolean")
@@ -68,6 +82,38 @@ class User implements UserInterface, \Serializable
     public function setId($id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastLogin(): \DateTime
+    {
+        return $this->lastLogin;
+    }
+
+    /**
+     * @param \DateTime $lastLogin
+     */
+    public function setLastLogin(\DateTime $lastLogin): void
+    {
+        $this->lastLogin = $lastLogin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
     }
 
     /**
@@ -116,6 +162,8 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->email,
+            $this->lastLogin,
         ]);
     }
 
@@ -123,9 +171,12 @@ class User implements UserInterface, \Serializable
     public function unserialize($serialized)
     {
         list(
-        $this->id,
-        $this->username,
-        $this->password
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->email,
+            $this->lastLogin,
+            
         ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 }
