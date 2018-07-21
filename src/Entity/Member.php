@@ -30,16 +30,16 @@ class Member
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="nom", type="string", length=60)
+     * @ORM\Column(name="lastname", type="string", length=60)
      */
-    private $nom;
+    private $lastname;
 
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="prenom", type="string", length=60)
+     * @ORM\Column(name="firstname", type="string", length=60)
      */
-    private $prenom;
+    private $firstname;
 
     /**
      * @var string
@@ -58,16 +58,16 @@ class Member
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="certificat", type="boolean", length=255)
+     * @ORM\Column(name="attestation", type="boolean", length=255)
      */
-    private $certificat;
+    private $attestation;
 
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="cotisation", type="string", length=60)
+     * @ORM\Column(name="membership", type="string", length=60)
      */
-    private $cotisation;
+    private $membership;
 
     /**
      * @var string
@@ -88,27 +88,73 @@ class Member
      */
     private $activites;
 
-    /**
-     * @var int
-     * @ORM\Column(type="integer", length=6)
-     * @Groups({"Member"})
-     */
-    protected $code;
-
-    /**
-     * @return mixed
-     */
-    public function getCode()
+    public function __construct()
     {
-        return $this->code;
+        $this->activites = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * @param mixed $code
+     * @return string
      */
-    public function setCode($code)
+    public function getLastname(): string
     {
-        $this->code = $code;
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname(string $lastname): void
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstname(): string
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname(string $firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAttestation(): string
+    {
+        return $this->attestation;
+    }
+
+    /**
+     * @param string $attestation
+     */
+    public function setAttestation(string $attestation): void
+    {
+        $this->attestation = $attestation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMembership(): string
+    {
+        return $this->membership;
+    }
+
+    /**
+     * @param string $membership
+     */
+    public function setMembership(string $membership): void
+    {
+        $this->membership = $membership;
     }
 
     /**
@@ -133,44 +179,6 @@ class Member
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param string $nom
-     *
-     * @return Member
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * @param string $prenom
-     *
-     * @return string
-     */
-    public function setPrenom($prenom)
-    {
-        return $this->prenom = $prenom;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
     }
 
     /**
@@ -212,42 +220,6 @@ class Member
     }
 
     /**
-     * @param string $certificat
-     *
-     * @return string
-     */
-    public function setCertificat($certificat)
-    {
-        return $this->certificat = $certificat;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCertificat()
-    {
-        return $this->certificat;
-    }
-
-    /**
-     * @param string $cotisation
-     *
-     * @return string
-     */
-    public function setCotisation($cotisation)
-    {
-        return $this->cotisation = $cotisation;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCotisation()
-    {
-        return $this->cotisation;
-    }
-
-    /**
      * @return mixed
      */
     public function getPhone()
@@ -261,11 +233,6 @@ class Member
     public function setPhone($phone)
     {
         $this->phone = $phone;
-    }
-
-    public function __construct()
-    {
-        $this->activites = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
