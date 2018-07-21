@@ -1,21 +1,17 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: Houziaux mike : jenaye
- * Email : mike@les-tilleuls.coop
- * Date: 12/07/18
- * Time: 20:14
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop.
  */
 
 namespace App\Entity;
 
-use App\Entity\Activity;
-use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Membre
  * @ApiResource(attributes={"normalization_context"={"groups"={"Member"}},"filters"={"offer.search", "offer.bool"}})
  * @ORM\Table(name="member")
  * @ORM\Entity(repositoryClass="App\Repository\MemberRepository")
@@ -34,16 +30,16 @@ class Member
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="nom", type="string", length=60)
+     * @ORM\Column(name="lastname", type="string", length=60)
      */
-    private $nom;
+    private $lastname;
 
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="prenom", type="string", length=60)
+     * @ORM\Column(name="firstname", type="string", length=60)
      */
-    private $prenom;
+    private $firstname;
 
     /**
      * @var string
@@ -62,16 +58,16 @@ class Member
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="certificat", type="boolean", length=255)
+     * @ORM\Column(name="attestation", type="boolean", length=255)
      */
-    private $certificat;
+    private $attestation;
 
     /**
      * @var string
      * @Groups({"Member", "Activity"})
-     * @ORM\Column(name="cotisation", type="string", length=60)
+     * @ORM\Column(name="membership", type="string", length=60)
      */
-    private $cotisation;
+    private $membership;
 
     /**
      * @var string
@@ -92,27 +88,73 @@ class Member
      */
     private $activites;
 
-    /**
-     * @var integer
-     * @ORM\Column(type="integer", length=6)
-     * @Groups({"Member"})
-     */
-    protected $code;
-
-    /**
-     * @return mixed
-     */
-    public function getCode()
+    public function __construct()
     {
-        return $this->code;
+        $this->activites = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * @param mixed $code
+     * @return string
      */
-    public function setCode($code)
+    public function getLastname(): string
     {
-        $this->code = $code;
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname(string $lastname): void
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstname(): string
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname(string $firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAttestation(): string
+    {
+        return $this->attestation;
+    }
+
+    /**
+     * @param string $attestation
+     */
+    public function setAttestation(string $attestation): void
+    {
+        $this->attestation = $attestation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMembership(): string
+    {
+        return $this->membership;
+    }
+
+    /**
+     * @param string $membership
+     */
+    public function setMembership(string $membership): void
+    {
+        $this->membership = $membership;
     }
 
     /**
@@ -131,10 +173,7 @@ class Member
         $this->activites = $activites;
     }
 
-
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -143,67 +182,18 @@ class Member
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Member
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return string
-     */
-    public function setPrenom($prenom)
-    {
-        return $this->prenom = $prenom;
-
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * Set email
-     *
      * @param string $email
      *
      * @return string
      */
     public function setEmail($email)
     {
-       return $this->email = $email;
+        $this->email = $email;
+
+        return $this;
     }
 
     /**
-     * Get email
-     *
      * @return string
      */
     public function getEmail()
@@ -212,9 +202,7 @@ class Member
     }
 
     /**
-     * Set cheque
-     *
-     * @param boolean $cheque
+     * @param bool $cheque
      *
      * @return bool
      */
@@ -224,58 +212,11 @@ class Member
     }
 
     /**
-     * Get cheque
-     *
      * @return bool
      */
     public function getCheque()
     {
         return $this->cheque;
-    }
-
-    /**
-     * Set certificat
-     *
-     * @param string $certificat
-     *
-     * @return string
-     */
-    public function setCertificat($certificat)
-    {
-        return $this->certificat = $certificat;
-    }
-
-    /**
-     * Get certificat
-     *
-     * @return string
-     */
-    public function getCertificat()
-    {
-        return $this->certificat;
-    }
-
-    /**
-     * Set cotisation
-     *
-     * @param string $cotisation
-     *
-     * @return string
-     */
-    public function setCotisation($cotisation)
-    {
-        return $this->cotisation = $cotisation;
-    }
-
-    /**
-     * Get cotisation
-     *
-     * @return string
-     */
-    public function getCotisation()
-    {
-        return $this->cotisation;
-
     }
 
     /**
@@ -293,17 +234,8 @@ class Member
     {
         $this->phone = $phone;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->activites = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
-     * Add activite
-     *
      * @param Activity $activite
      *
      * @return \App\Entity\Activity
@@ -314,8 +246,6 @@ class Member
     }
 
     /**
-     * Remove activite
-     *
      * @param Activity $activite
      */
     public function removeActivite(Activity $activite)
@@ -338,5 +268,4 @@ class Member
     {
         $this->enabled = $enabled;
     }
-
 }

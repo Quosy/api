@@ -6,10 +6,12 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.1",
+        "lexik/jwt-authentication-bundle": "^2.5",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.1",
         "symfony/lts": "^4@dev",
+        "symfony/security-bundle": "^4.1",
         "symfony/web-server-bundle": "^4.1",
         "symfony/yaml": "^4.1",
         "webonyx/graphql-php": "^0.12.4"

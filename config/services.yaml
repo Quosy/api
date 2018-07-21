@@ -33,3 +33,7 @@ services:
             decorates: 'api_platform.swagger.normalizer.documentation'
             arguments: [ '@App\Swagger\SwaggerDecorator.inner' ]
             autoconfigure: false
+
+    'App\Serializer\UserNormalizer':
+            arguments:
+                $decorated: '@api_platform.serializer.normalizer.item'
