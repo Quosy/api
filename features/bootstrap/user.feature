@@ -1,4 +1,3 @@
-# features/books.feature
 Feature: Users feature
   Scenario: Adding a new user
     When I add "Content-Type" header equal to "application/json"
