@@ -37,3 +37,10 @@ services:
     'App\Serializer\UserNormalizer':
             arguments:
                 $decorated: '@api_platform.serializer.normalizer.item'
+
+    acme.security.authentication_event_listener:
+            class: App\EventSubscriber\AuthenticationListener
+            tags:
+                - { name: kernel.event_subscriber}
+                - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+            arguments: ['@service_container']
