@@ -41,6 +41,5 @@ services:
     acme.security.authentication_event_listener:
             class: App\EventSubscriber\AuthenticationListener
             tags:
-                - { name: kernel.event_subscriber}
-                - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
-            arguments: ['@service_container']
+                - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+            arguments: ['@request_stack']
