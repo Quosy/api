@@ -37,3 +37,10 @@ services:
     'App\Serializer\UserNormalizer':
             arguments:
                 $decorated: '@api_platform.serializer.normalizer.item'
+
+    acme.security.authentication_event_listener:
+            class: App\EventSubscriber\AuthenticationListener
+            tags:
+                - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+            arguments: ['@doctrine.orm.entity_manager','@request_stack']
+            
