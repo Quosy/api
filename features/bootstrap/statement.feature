@@ -1,5 +1,5 @@
 Feature: Types feature
-  Scenario: Add type
+  Scenario: Add statement
     When I add "Content-Type" header equal to "application/json"
     And I add "Accept" header equal to "application/json"
     And I send a "POST" request to "/api/statements" with body:
@@ -14,7 +14,7 @@ Feature: Types feature
     Then the response status code should be 201
     And the response should be in JSON
 
-  Scenario: Update type
+  Scenario: Update statement
     When I add "Content-Type" header equal to "application/json"
     And I send a "PUT" request to "/api/statements/1" with body:
     """
@@ -25,11 +25,11 @@ Feature: Types feature
     Then the response status code should be 200
 
 
-  Scenario: Get informations of user
+  Scenario: Get informations of statement
     When I send a "GET" request to "/api/statements/1"
     Then the response status code should be 200
 
-  Scenario: delete user jenaye
+  Scenario: delete statement
     When I add "Content-Type" header equal to "application/json"
     And I send a "DELETE" request to "/api/statements/1"
     Then the response status code should be 200

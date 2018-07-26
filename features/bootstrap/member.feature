@@ -18,7 +18,7 @@ Feature: Types feature
     Then the response status code should be 201
     And the response should be in JSON
 
-  Scenario: Update type
+  Scenario: Update jean member
     When I add "Content-Type" header equal to "application/json"
     And I send a "PUT" request to "/api/members/1" with body:
     """
@@ -29,11 +29,11 @@ Feature: Types feature
     Then the response status code should be 200
 
 
-  Scenario: Get informations of user
+  Scenario: Get informations of member jean
     When I send a "GET" request to "/api/members/1"
     Then the response status code should be 200
 
-  Scenario: delete user jenaye
+  Scenario: delete member Jean
     When I add "Content-Type" header equal to "application/json"
     And I send a "DELETE" request to "/api/members/1"
     Then the response status code should be 200
