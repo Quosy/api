@@ -26,8 +26,10 @@ php bin/console doctrine:schema:update --force
 
 # Todo
 
-- [ ] Add Test
+- [x] Add Test
 - [x] Add Login & register
 - [x] Add Jwt
 - [ ] Add Filters
 - [x] Add php-cs-fixer
+- [ ] Monolog
+- [ ] phpunit
