@@ -128,7 +128,7 @@ class Member
     /**
      * @return string
      */
-    public function getAttestation(): string
+    public function getAttestation()
     {
         return $this->attestation;
     }
@@ -136,7 +136,7 @@ class Member
     /**
      * @param string $attestation
      */
-    public function setAttestation(string $attestation): void
+    public function setAttestation(string $attestation)
     {
         $this->attestation = $attestation;
     }
@@ -152,7 +152,7 @@ class Member
     /**
      * @param string $membership
      */
-    public function setMembership(string $membership): void
+    public function setMembership(string $membership)
     {
         $this->membership = $membership;
     }
