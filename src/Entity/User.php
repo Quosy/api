@@ -51,7 +51,6 @@ class User implements UserInterface, \Serializable
      */
     private $lastLogin;
 
-
     /**
      * @ORM\Column(name="is_active", type="boolean")
      * @Groups({"User"})
@@ -175,8 +174,6 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             $this->email,
-            $this->lastLogin,
-            
-        ) = unserialize($serialized, ['allowed_classes' => false]);
+            $this->lastLogin) = unserialize($serialized, ['allowed_classes' => false]);
     }
 }
