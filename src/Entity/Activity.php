@@ -1,28 +1,23 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: Houziaux mike : jenaye
- * Email : mike@les-tilleuls.coop
- * Date: 12/07/18
- * Time: 20:21
+ * User: Houziaux mike : jenaye : mike@les-tilleuls.coop.
  */
 
 namespace App\Entity;
 
-use App\Entity\Member;
-use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * Activity
  * @ApiResource(attributes={"normalization_context"={"groups"={"Activity"}}})
  * @ORM\Table(name="activity")
  * @ORM\Entity(repositoryClass="App\Repository\ActivityRepository")
  */
 class Activity
 {
-
     /**
      * @var int
      * @Groups({"Activity", "Member"})
@@ -68,11 +63,7 @@ class Activity
         $this->type = $type;
     }
 
-
-
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -81,8 +72,6 @@ class Activity
     }
 
     /**
-     * Set name
-     *
      * @param string $name
      *
      * @return Activity
@@ -95,8 +84,6 @@ class Activity
     }
 
     /**
-     * Get name
-     *
      * @return string
      */
     public function getName()
@@ -104,24 +91,15 @@ class Activity
         return $this->name;
     }
 
-
-
-
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         $this->members = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add membre
-     *
      * @param Member $member
-     * @return Activity
-     * @internal param Membre $membre
      *
+     * @return Activity
      */
     public function addMembre(Member $member)
     {
@@ -131,10 +109,7 @@ class Activity
     }
 
     /**
-     * Remove membre
-     *
      * @param Member $member
-     * @internal param Membre $membre
      */
     public function removeMembre(Member $member)
     {
@@ -142,13 +117,10 @@ class Activity
     }
 
     /**
-     * Get membres
-     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getMembres()
     {
         return $this->members;
     }
-
 }

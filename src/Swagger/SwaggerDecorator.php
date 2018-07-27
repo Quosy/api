@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 // http://localhost:8000/api/docs.json?api_gateway=true
 
 namespace App\Swagger;
@@ -7,6 +9,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 final class SwaggerDecorator implements NormalizerInterface
 {
+  
 private $decorated;
 
 public function __construct(NormalizerInterface $decorated)
@@ -45,5 +48,5 @@ public function normalize($object, $format = null, array $context = [])
 public function supportsNormalization($data, $format = null) {
     return $this->decorated->supportsNormalization($data, $format);
 }
-
+  
 }
