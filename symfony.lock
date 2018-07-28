@@ -107,6 +107,9 @@
             "ref": "509b1542f3180a1cfe248ade8b7bf5092c2d4127"
         }
     },
+    "monolog/monolog": {
+        "version": "1.23.0"
+    },
     "namshi/jose": {
         "version": "7.2.3"
     },
@@ -223,6 +226,18 @@
     },
     "symfony/lts": {
         "version": "4-dev"
+    },
+    "symfony/monolog-bridge": {
+        "version": "v4.1.2"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "51b7a31438c8aeeda7931a0ece98a945c91e7f20"
+        }
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.8.0"

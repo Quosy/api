@@ -33,3 +33,4 @@ php bin/console doctrine:schema:update --force
 - [x] Add php-cs-fixer
 - [ ] Monolog
 - [ ] phpunit
+- [ ] add table IP to get history in profile and send email/sms if its new IP

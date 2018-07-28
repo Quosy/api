@@ -42,5 +42,5 @@ services:
             class: App\EventSubscriber\AuthenticationListener
             tags:
                 - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
-            arguments: ['@doctrine.orm.entity_manager','@request_stack']
+            arguments: ['@doctrine.orm.entity_manager','@logger', '@request_stack']
             
