@@ -29,16 +29,18 @@ final class SwaggerDecorator implements NormalizerInterface
             'name' => 'username',
             'definition' => 'you\'re username',
             'default' => 'string',
+            'required' => true
         ];
 
-        $passwordDefinition2 = [
+        $passwordDefinition = [
             'name' => 'password',
             'definition' => 'you\'re password',
             'default' => 'string',
+            'required' => true
         ];
 
         $docs['paths']['/login']['post']['parameters'][] = $usernameDefinition;
-        $docs['paths']['/login']['post']['parameters'][] = $passwordDefinition2;
+        $docs['paths']['/login']['post']['parameters'][] = $passwordDefinition;
 
         return $docs;
     }
