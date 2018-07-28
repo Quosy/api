@@ -34,7 +34,7 @@ class AuthenticationListener extends Controller
 
         $loggedUser = $event->getUser();
         $loggedUser->setLastLogin(new \DateTime());
-
+        $loggedUser->setIp($ip);
         $this->em->persist($loggedUser);
         $this->em->flush();
         $this->logger->info("user " .$loggedUser->getUsername() . " logged in using " . $ip);
