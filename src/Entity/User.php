@@ -52,6 +52,13 @@ class User implements UserInterface, \Serializable
     private $lastLogin;
 
     /**
+     * @ORM\Column(type="string", length=12)
+     * @Groups({"User"})
+     */
+    private $ip;
+
+
+    /**
      * @ORM\Column(name="is_active", type="boolean")
      * @Groups({"User"})
      */
@@ -81,6 +88,22 @@ class User implements UserInterface, \Serializable
     public function setId($id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+
+    /**
+     * @param mixed $ip
+     */
+    public function setIp($ip): void
+    {
+        $this->ip = $ip;
     }
 
     /**

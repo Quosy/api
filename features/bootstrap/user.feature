@@ -9,7 +9,8 @@ Feature: Users feature
       "password": "security",
       "isActive": true,
       "email": "mike@les-tilleuls.coop",
-      "lastLogin": "2018-07-21T19:52:20.553Z"
+      "lastLogin": "2018-07-21T19:52:20.553Z",
+      "ip": "127.0.0.1"
     }
     """
     Then the response status code should be 201
