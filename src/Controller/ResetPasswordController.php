@@ -26,7 +26,7 @@ class ResetPasswordController extends Controller
         if($exist){
             try {
                 $message = (new \Swift_Message('Test contact'))
-                    ->setFrom('xxx@gmail.com')
+                    ->setFrom('xxxx@gmail.com')
                     ->setTo($email)
                     ->setBody(
                         $this->renderView(
@@ -37,26 +37,15 @@ class ResetPasswordController extends Controller
                     );
                     $this->get('mailer')->send($message);
 
-                return $this->redirectToRoute('form_reset_password');
+                return $this->redirect('http://localhost:4200/recover');
 
             } catch (Swift_TransportException $err) {
                 throw new Exception('Error' + $err);
             }
         }
         return new Response(
-            'je laipas trouver bro'
+            'Email dont exist into database'
         );
     }
 
-    /**
-     * @Route("/reset_password")
-     * @param Request $request
-     * @param $email
-     * @return Response
-     */
-    public function reset_password(){
-        return new Response(
-            'ici ça sera un form dude !'
-        );
-    }
 }

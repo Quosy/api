@@ -1,6 +1,2 @@
 login:
     path: /login
-
-
-form_reset_password:
-    path: /reset_password
