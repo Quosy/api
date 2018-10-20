@@ -13,6 +13,7 @@
         "symfony/lts": "^4@dev",
         "symfony/monolog-bundle": "^3.3",
         "symfony/security-bundle": "^4.1",
+        "symfony/swiftmailer-bundle": "^3.2",
         "symfony/web-server-bundle": "^4.1",
         "symfony/yaml": "^4.1",
         "webonyx/graphql-php": "^0.12.4"

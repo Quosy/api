@@ -33,6 +33,7 @@ class User implements UserInterface, \Serializable
      */
     private $username;
 
+
     /**
      * @ORM\Column(type="string", length=60, unique=true)
      * @Groups({"User"})
@@ -63,6 +64,12 @@ class User implements UserInterface, \Serializable
      * @Groups({"User"})
      */
     private $isActive;
+
+    /**
+     * @ORM\Column(type="string", length=50, unique=true)
+     * @Groups({"User"})
+     */
+    private $token;
 
     public function setPassword($password)
     {
@@ -144,6 +151,24 @@ class User implements UserInterface, \Serializable
     public function getisActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param mixed $token
+     * @throws \Exception
+     */
+    public function setToken($token): void
+    {
+
+        $this->token = $token = bin2hex(random_bytes(50));
     }
 
     /**
